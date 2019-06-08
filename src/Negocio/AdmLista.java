@@ -12,9 +12,12 @@ package Negocio;
 public class AdmLista {
     private Lista lista;
 
-    public AdmLista(Lista lista) {
+    public AdmLista() {
         this.lista = lista;
     }
     
+    public void agregar (){
+    
+    }
     
 }

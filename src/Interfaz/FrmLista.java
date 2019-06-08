@@ -5,17 +5,19 @@
  */
 package Interfaz;
 
+import Negocio.UILista;
+
 /**
  *
  * @author SRVAdmin
  */
 public class FrmLista extends javax.swing.JFrame {
 
-    /**
-     * Creates new form FrmLista
-     */
+    private UILista ui;
+    
     public FrmLista() {
         initComponents();
+        ui = new UILista();
     }
 
     /**
@@ -30,19 +32,19 @@ public class FrmLista extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
+        jTFValor = new javax.swing.JTextField();
+        jBAgrIni = new javax.swing.JButton();
+        jBAgrFin = new javax.swing.JButton();
+        jBAgrPos = new javax.swing.JButton();
+        jBAgrRef = new javax.swing.JButton();
+        jBEdiPos = new javax.swing.JButton();
+        jBEdiRef = new javax.swing.JButton();
+        jBBusPos = new javax.swing.JButton();
+        jBBusRef = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
+        jBEliPos = new javax.swing.JButton();
+        jBEliRef = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -60,36 +62,41 @@ public class FrmLista extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Valor");
 
-        jTextField1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jTFValor.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
-        jButton1.setText("Agregar al Inicio");
-
-        jButton2.setText("Agregar al Final");
-
-        jButton3.setText("Agregar por Posicion");
-
-        jButton4.setText("Agregar por Referencia");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        jBAgrIni.setText("Agregar al Inicio");
+        jBAgrIni.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                jBAgrIniActionPerformed(evt);
             }
         });
 
-        jButton5.setText("Editar por Posicion");
+        jBAgrFin.setText("Agregar al Final");
 
-        jButton6.setText("Editar por referencia");
+        jBAgrPos.setText("Agregar por Posicion");
 
-        jButton7.setText("Buscar por Posicion");
+        jBAgrRef.setText("Agregar por Referencia");
+        jBAgrRef.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBAgrRefActionPerformed(evt);
+            }
+        });
 
-        jButton8.setText("Buscar por Referencia");
+        jBEdiPos.setText("Editar por Posicion");
+
+        jBEdiRef.setText("Editar por referencia");
+
+        jBBusPos.setText("Buscar por Posicion");
+
+        jBBusRef.setText("Buscar por Referencia");
 
         jLabel2.setText("Total de Nodos:");
 
         jLabel3.setText("0");
 
-        jButton9.setText("Eliminar por Posicion");
+        jBEliPos.setText("Eliminar por Posicion");
 
-        jButton10.setText("Eliminar por Referencia");
+        jBEliRef.setText("Eliminar por Referencia");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel4.setText("Agregar");
@@ -116,14 +123,14 @@ public class FrmLista extends javax.swing.JFrame {
                             .addComponent(jLabel2))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jBAgrFin, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jBAgrIni, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jBAgrRef, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jBAgrPos, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(jBBusRef, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jBBusPos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(36, 36, 36)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -131,7 +138,7 @@ public class FrmLista extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jTFValor, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(117, 117, 117)
                         .addComponent(jLabel4)
                         .addGap(84, 84, 84)
@@ -141,13 +148,13 @@ public class FrmLista extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jBEdiPos, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(jBEliPos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton6)
+                                .addComponent(jBEdiRef)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton10)
+                                .addComponent(jBEliRef)
                                 .addGap(0, 0, Short.MAX_VALUE)))
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
@@ -165,7 +172,7 @@ public class FrmLista extends javax.swing.JFrame {
                         .addGap(54, 54, 54)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jTFValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -179,8 +186,8 @@ public class FrmLista extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(5, 5, 5)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jButton1)
-                                    .addComponent(jButton7)))
+                                    .addComponent(jBAgrIni)
+                                    .addComponent(jBBusPos)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -190,12 +197,12 @@ public class FrmLista extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jButton2)
-                                    .addComponent(jButton8))
+                                    .addComponent(jBAgrFin)
+                                    .addComponent(jBBusRef))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton3)
+                                .addComponent(jBAgrPos)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton4)
+                                .addComponent(jBAgrRef)
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
@@ -203,21 +210,25 @@ public class FrmLista extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(5, 5, 5)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton5)
-                            .addComponent(jButton9))
+                            .addComponent(jBEdiPos)
+                            .addComponent(jBEliPos))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton6)
-                            .addComponent(jButton10))
+                            .addComponent(jBEdiRef)
+                            .addComponent(jBEliRef))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void jBAgrRefActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAgrRefActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_jBAgrRefActionPerformed
+
+    private void jBAgrIniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAgrIniActionPerformed
+     ui.agregar();
+    }//GEN-LAST:event_jBAgrIniActionPerformed
 
     /**
      * @param args the command line arguments
@@ -255,16 +266,16 @@ public class FrmLista extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
+    private javax.swing.JButton jBAgrFin;
+    private javax.swing.JButton jBAgrIni;
+    private javax.swing.JButton jBAgrPos;
+    private javax.swing.JButton jBAgrRef;
+    private javax.swing.JButton jBBusPos;
+    private javax.swing.JButton jBBusRef;
+    private javax.swing.JButton jBEdiPos;
+    private javax.swing.JButton jBEdiRef;
+    private javax.swing.JButton jBEliPos;
+    private javax.swing.JButton jBEliRef;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -274,6 +285,6 @@ public class FrmLista extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTFValor;
     // End of variables declaration//GEN-END:variables
 }

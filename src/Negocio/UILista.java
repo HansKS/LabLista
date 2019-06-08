@@ -12,10 +12,14 @@ package Negocio;
 public class UILista {
     private AdmLista adm;
 
-    public UILista(AdmLista adm) {
-        this.adm = adm;
+    public UILista() {
+        adm = new AdmLista();
     }
     
+    public void agregar () {
+        adm.agregar();
+    
+    }
     
     
 }
